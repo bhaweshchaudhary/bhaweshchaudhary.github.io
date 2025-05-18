@@ -271,7 +271,6 @@
             >bhaweshchaudhary</a
           >
         </p>
-
         <p class="text-lg">
           HackTheBox:
           <a
@@ -302,6 +301,12 @@
             href="https://bugcrowd.com/bhaweshx"
             class="text-red-500 hover:underline"
             >bhaweshx</a
+          >
+        </p>
+        <p class="text-lg">
+          DEV Community:
+          <a href="https://dev.to/xybersec" class="text-red-500 hover:underline"
+            >xybersec</a
           >
         </p>
       </section>
@@ -335,6 +340,7 @@
       const date = new Date();
       const year = date.getFullYear();
       document.getElementById("year").textContent = year;
+
       // Scroll-to-top functionality
       const scrollToTop = document.getElementById("scrollToTop");
       window.addEventListener("scroll", () => {
@@ -344,114 +350,55 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
 
-      // Tumblr API fetch for blog posts
+      // dev.to API fetch for blog posts
       const blogPostsContainer = document.getElementById("blog-posts");
-      const apiKey = "TsVgBcZISBzisMrOTgBFA4TdO3ihEhX8wmNQCL9A7PZ36d1kTD";
-      const blogIdentifier = "bhaweshx.tumblr.com";
-      const apiUrl = `https://api.tumblr.com/v2/blog/${blogIdentifier}/posts?api_key=${apiKey}&limit=5`;
+      const username = "xybersec";
+      const apiUrl = `https://dev.to/api/articles?username=${username}&per_page=5`;
 
       async function fetchBlogPosts() {
         try {
           const response = await fetch(apiUrl);
           if (!response.ok) {
-            if (response.status === 401) {
-              throw new Error(
-                "Unauthorized: Invalid API key or private blog. Please check your API key or make the blog public."
-              );
-            } else if (response.status === 404) {
-              throw new Error(
-                "Blog not found. Ensure bhaweshx.tumblr.com exists and is accessible."
-              );
-            } else {
-              throw new Error(
-                `HTTP error! Status: ${response.status} - ${response.statusText}`
-              );
-            }
+            throw new Error(
+              `HTTP error! Status: ${response.status} - ${response.statusText}`
+            );
           }
-          const data = await response.json();
-          if (!data.response || !data.response.posts) {
-            throw new Error("Invalid API response: No posts found");
-          }
-          const posts = data.response.posts;
+          const posts = await response.json();
 
           if (posts.length === 0) {
             blogPostsContainer.innerHTML =
-              '<p class="text-lg text-gray-400">nothing yet, come back later!</p>';
+              '<p class="text-lg text-gray-400">No posts yet, come back later!</p>';
             return;
           }
 
           blogPostsContainer.innerHTML = "";
           posts.forEach((post, index) => {
-            // Helper function to strip HTML tags
+            // Sanitize content to prevent XSS
             const stripHtml = (html) => {
               const tempDiv = document.createElement("div");
               tempDiv.innerHTML = html;
               return tempDiv.textContent || tempDiv.innerText || "";
             };
 
-            // Use post.title if available, otherwise fall back to first paragraph of post.body
-            let postTitle =
-              post.title && post.title.trim()
-                ? post.title
-                : "No Title Available";
-            let displayContent = post.body || "No content available";
-
-            // If post.title is not available, try to extract it from the first paragraph
-            if (!post.title || !post.title.trim()) {
-              if (post.body) {
-                const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = post.body;
-                const firstParagraph = tempDiv.querySelector("p");
-                if (firstParagraph) {
-                  postTitle = stripHtml(firstParagraph.innerHTML);
-                } else {
-                  postTitle =
-                    stripHtml(post.body).substring(0, 50) +
-                    (stripHtml(post.body).length > 50 ? "..." : "");
-                }
-              }
-            }
-
-            // If the first paragraph of post.body matches the title, exclude it from the display content
-            if (post.body) {
-              const tempDiv = document.createElement("div");
-              tempDiv.innerHTML = post.body;
-              const firstParagraph = tempDiv.querySelector("p");
-              if (
-                firstParagraph &&
-                stripHtml(firstParagraph.innerHTML) === postTitle
-              ) {
-                firstParagraph.remove();
-                displayContent = tempDiv.innerHTML || "No content available";
-              }
-            }
+            // Use post title or fallback
+            const postTitle = post.title || "No Title Available";
+            // Use description as a preview, fallback to body excerpt
+            const displayContent =
+              post.description ||
+              (post.body_html
+                ? stripHtml(post.body_html).substring(0, 200) + "..."
+                : "No content available");
+            const postDate = new Date(post.published_at).toLocaleDateString();
 
             const postElement = document.createElement("div");
             postElement.className = "hover-glow p-4 rounded-lg bg-gray-900";
             postElement.innerHTML = `
-                        <h3 class="text-xl font-bold">${postTitle}</h3>
-                        <p class="text-sm text-gray-400">${new Date(
-                          post.timestamp * 1000
-                        ).toLocaleDateString()}</p>
-                        <div id="full-content-${index}" class="blog-content mt-2 hidden">${displayContent}</div>
-                        <button id="read-more-${index}" class="text-red-500 hover:underline mt-2 inline-block focus:outline-none">Read More</button>
-                    `;
+              <h3 class="text-xl font-bold">${postTitle}</h3>
+              <p class="text-sm text-gray-400">${postDate}</p>
+              <div id="full-content-${index}" class="blog-content mt-2 hidden">${displayContent}</div>
+              <a href="${post.url}" class="text-red-500 hover:underline mt-2 inline-block focus:outline-none" target="_blank">Read More on DEV</a>
+            `;
             blogPostsContainer.appendChild(postElement);
-
-            // Add event listener for the Read More button
-            const readMoreBtn = document.getElementById(`read-more-${index}`);
-            const fullContent = document.getElementById(
-              `full-content-${index}`
-            );
-            readMoreBtn.addEventListener("click", () => {
-              if (fullContent.classList.contains("hidden")) {
-                fullContent.classList.remove("hidden");
-                readMoreBtn.textContent = "Read Less";
-              } else {
-                fullContent.classList.add("hidden");
-                readMoreBtn.textContent = "Read More";
-              }
-            });
           });
         } catch (error) {
           console.error("Error fetching blog posts:", error.message);
