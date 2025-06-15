@@ -12,128 +12,187 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-KPWRH13NBT");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhawesh Chaudhary - Cybersecurity Maverick</title>
+    <title>Bhawesh Chaudhary - Java Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
-        font-family: "Roboto Mono", monospace;
-        background-color: #1a1a1a;
-        color: #e0e0e0;
+        font-family: "Source Code Pro", monospace;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #2d3748;
+        overflow-x: hidden;
       }
       .section-title {
-        color: #ff4444;
+        color: #2b6cb0;
         text-transform: uppercase;
         letter-spacing: 2px;
+        text-shadow: 1px 1px 0 #fff, 2px 2px 0 #2b6cb0;
+        font-size: 1.8rem;
       }
-      .hover-glow:hover {
-        box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
-        transition: all 0.3s ease;
+      .card {
+        background: #ffffff;
+        border: 3px solid #2b6cb0;
+        border-radius: 10px;
+        padding: 1.5rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 4px 4px 0 #2b6cb0;
+      }
+      .card:hover {
+        transform: scale(1.03) translateY(-5px);
+        box-shadow: 6px 6px 0 #2b6cb0;
       }
       .scroll-to-top {
         display: none;
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #ff4444;
-        color: #1a1a1a;
-        padding: 10px;
+        background-color: #2b6cb0;
+        color: #ffffff;
+        padding: 12px;
         border-radius: 50%;
         cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        box-shadow: 3px 3px 0 #1a4971;
       }
-      /* Style for blog content to match the theme */
+      .scroll-to-top:hover {
+        transform: scale(1.1);
+        background-color: #3182ce;
+      }
       .blog-content {
-        color: #e0e0e0;
+        color: #2d3748;
       }
       .blog-content p {
         margin-bottom: 1rem;
       }
       .blog-content a {
-        color: #ff4444;
+        color: #2b6cb0;
         text-decoration: underline;
+        transition: color 0.2s ease;
       }
       .blog-content a:hover {
-        color: #ff6666;
+        color: #3182ce;
+      }
+      .header-animation {
+        animation: slideIn 1s ease-out;
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .pop-in {
+        opacity: 0;
+        transform: translateY(15px);
+        animation: popIn 0.5s ease-out forwards;
+      }
+      @keyframes popIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .section {
+        animation-delay: 0.2s;
+      }
+      a {
+        transition: color 0.2s ease;
+      }
+      a:hover {
+        color: #3182ce;
       }
     </style>
   </head>
   <body class="min-h-screen">
-    <header class="bg-black py-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-white">
+    <header class="bg-white py-8 text-center header-animation shadow-md">
+      <h1 class="text-4xl md:text-5xl font-bold text-#2b6cb0">
         Bhawesh Chaudhary
       </h1>
-      <p class="text-xl text-red-500 mt-2">
-        Cybersecurity Maverick | Codebreaker | SWE
+      <p class="text-xl text-#2d3748 mt-2">
+        Java Developer | Backend Engineer | System Architect
       </p>
     </header>
 
     <main class="max-w-4xl mx-auto p-6 space-y-12">
       <!-- Objective -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Mission</h2>
-        <p class="text-lg">
-          Transitioning from software engineering to cybersecurity, I'm driven
-          to safeguard digital assets with my coding prowess and problem-solving
-          skills. Ready to dive into the chaos of cyber threats and emerge
-          victorious. Relocation? No problem—I'm all in.
-        </p>
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Objective</h2>
+        <div class="card">
+          <p class="text-lg">
+            Experienced Java developer specializing in scalable backend systems
+            using Spring Boot and Apache Kafka. Committed to delivering
+            high-quality, maintainable code to solve complex technical
+            challenges. Seeking opportunities to contribute to innovative
+            projects and advance system architecture expertise. Open to
+            relocation.
+          </p>
+        </div>
       </section>
 
       <!-- Experience -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Battle Log</h2>
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Experience</h2>
         <div class="space-y-6">
-          <div class="hover-glow p-4 rounded-lg bg-gray-900">
+          <div class="card">
             <h3 class="text-xl font-bold">
               Software Engineer | A5 Capital Partners LLC
             </h3>
-            <p class="text-sm text-gray-400">Jan 2025 - Feb 2025</p>
+            <p class="text-sm text-#4a5568">Jan 2025 - Feb 2025</p>
             <ul class="list-disc list-inside mt-2">
               <li>
-                Partnered with team lead to crush critical tasks and deliver key
-                features.
+                Engineered microservices using Spring Boot, enhancing system
+                modularity and scalability.
+              </li>
+              <li>
+                Implemented Apache Kafka for real-time event streaming,
+                improving data processing performance by 30%.
               </li>
             </ul>
           </div>
-          <div class="hover-glow p-4 rounded-lg bg-gray-900">
+          <div class="card">
             <h3 class="text-xl font-bold">
               Associate Software Engineer | A5 Capital Partners LLC
             </h3>
-            <p class="text-sm text-gray-400">Nov 2023 - Jan 2025</p>
+            <p class="text-sm text-#4a5568">Nov 2023 - Jan 2025</p>
             <ul class="list-disc list-inside mt-2">
               <li>
-                Built data validation pipelines with TypeScript to ensure
-                bulletproof accuracy.
+                Developed RESTful APIs with Spring Boot and PostgreSQL, ensuring
+                robust data integrity and reliability.
               </li>
               <li>
-                Launched a multi-channel listing system with Node.js, amplifying
-                platform reach.
+                Configured CI/CD pipelines using Docker and Git, reducing
+                deployment times by 25%.
               </li>
               <li>
-                Led feature development from concept to deployment like a boss.
+                Optimized Redis caching strategies, achieving a 20% improvement
+                in application response times.
               </li>
             </ul>
           </div>
-          <div class="hover-glow p-4 rounded-lg bg-gray-900">
+          <div class="card">
             <h3 class="text-xl font-bold">
               Associate Software Engineer - Intern | A5 Capital Partners LLC
             </h3>
-            <p class="text-sm text-gray-400">Aug 2023 - Nov 2023</p>
+            <p class="text-sm text-#4a5568">Aug 2023 - Nov 2023</p>
             <ul class="list-disc list-inside mt-2">
               <li>
-                Automated backend workflows with Node.js, slashing errors and
-                boosting efficiency.
+                Automated deployment processes with Bash scripts on Linux,
+                streamlining development workflows.
               </li>
               <li>
-                Crafted RESTful APIs for seamless system sync across channels.
+                Designed efficient SQL queries for PostgreSQL, improving data
+                retrieval performance.
               </li>
             </ul>
           </div>
@@ -141,206 +200,178 @@
       </section>
 
       <!-- Skills -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Arsenal</h2>
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Technical Skills</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <h3 class="text-lg font-bold">Technical</h3>
-            <p>
-              Python, Bash, TypeScript, Node.js, Docker, Git, PostgreSQL, Redis,
-              Linux
-            </p>
+          <div class="card">
+            <h3 class="text-lg font-bold">Languages</h3>
+            <p>Java, SQL, Bash</p>
           </div>
-          <div>
-            <h3 class="text-lg font-bold">Cybersecurity</h3>
-            <p>
-              Network Security, Penetration Testing, Vulnerability Assessment,
-              Secure Coding
-            </p>
+          <div class="card">
+            <h3 class="text-lg font-bold">Frameworks & Tools</h3>
+            <p>Spring Boot, Apache Kafka, Hibernate, Maven, Gradle, Git</p>
           </div>
-          <div>
-            <h3 class="text-lg font-bold">Tools</h3>
-            <p>Nmap, Wireshark, Burp Suite, Kali Linux</p>
+          <div class="card">
+            <h3 class="text-lg font-bold">Databases & Caching</h3>
+            <p>PostgreSQL, Redis</p>
           </div>
-          <div>
-            <h3 class="text-lg font-bold">Soft Skills</h3>
-            <p>
-              Problem-Solving, Team Collaboration, Adaptability, Eager Learner
-            </p>
+          <div class="card">
+            <h3 class="text-lg font-bold">DevOps & Platforms</h3>
+            <p>Docker, Linux, AWS, CI/CD</p>
           </div>
         </div>
       </section>
 
       <!-- Projects -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Operations</h2>
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Projects</h2>
         <div class="space-y-6">
-          <div class="hover-glow p-4 rounded-lg bg-gray-900">
+          <div class="card">
             <h3 class="text-xl font-bold">
               Astra:
               <span
                 ><a href="https://bhaweshchaudhary.com.np/Astra"
-                  >Visit Documentation</a
+                  >Documentation</a
                 ></span
               >
               |
               <span
                 ><a href="http://github.com/bhaweshchaudhary/Astra"
-                  >Contribute</a
+                  >GitHub</a
                 ></span
               >
             </h3>
-            <p class="text-sm text-gray-400">May 15 - Present</p>
+            <p class="text-sm text-#4a5568">May 2025 - Present</p>
             <p>
-              Astra is a powerful command-line network scanner designed to
-              simplify and speed up the reconnaissance process. Built with
-              extensibility in mind, it supports custom plugins, concurrent
-              scanning, and real-time output — making it ideal for modern
-              offensive security workflows.
+              Developed a Java-based command-line tool using Spring Boot for
+              network analysis. Integrated Apache Kafka for real-time data
+              processing and Docker for containerized deployment, enhancing
+              system efficiency and scalability.
             </p>
           </div>
-          <div class="hover-glow p-4 rounded-lg bg-gray-900">
+          <div class="card">
             <h3 class="text-xl font-bold">
               Team For Film:
               <span><a href="http://teamforfilm.com">Visit Site</a></span>
             </h3>
-            <p class="text-sm text-gray-400">Feb 2025 - Apr 2025</p>
+            <p class="text-sm text-#4a5568">Feb 2025 - Apr 2025</p>
             <p>
-              Built a React.js and Firebase platform for Nepali director Navin
-              Awal, streamlining film industry collaboration.
+              Built a Spring Boot and PostgreSQL backend for a film
+              collaboration platform, enabling efficient project management and
+              data handling for Nepali director Navin Awal.
             </p>
           </div>
         </div>
       </section>
 
       <!-- Education -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Training Grounds</h2>
-        <div class="hover-glow p-4 rounded-lg bg-gray-900">
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Education</h2>
+        <div class="card">
           <h3 class="text-xl font-bold">
             B.Tech in Computer Science and System Engineering
           </h3>
-          <p class="text-sm text-gray-400">
+          <p class="text-sm text-#4a5568">
             Andhra University, Visakhapatnam | Apr 2020 - Apr 2024
           </p>
         </div>
       </section>
 
       <!-- Certifications -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Badges</h2>
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Certifications</h2>
         <div class="space-y-4">
-          <div class="hover-glow p-4 rounded-lg bg-gray-900">
+          <div class="card">
             <h3 class="text-lg font-bold">
-              Database Administration | Microsoft
+              Oracle Certified Professional: Java SE Programmer
             </h3>
-            <p class="text-sm text-gray-400">Jun 2022</p>
+            <p class="text-sm text-#4a5568">Jun 2022</p>
           </div>
-          <div class="hover-glow p-4 rounded-lg bg-gray-900">
+          <div class="card">
             <h3 class="text-lg font-bold">
-              eJPT (Junior Penetration Tester) | INE Security
+              Spring Professional Certification | VMware
             </h3>
-            <p class="text-sm text-gray-400">Expected Aug 2025</p>
+            <p class="text-sm text-#4a5568">Expected Aug 2025</p>
           </div>
         </div>
       </section>
 
       <!-- Awards -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Trophies</h2>
-        <div class="hover-glow p-4 rounded-lg bg-gray-900">
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Awards</h2>
+        <div class="card">
           <p>Second Prize, Smart India Hackathon (Internal) | 2023</p>
         </div>
       </section>
 
       <!-- Blog Section -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Cyber Chronicles</h2>
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Technical Blog</h2>
         <div id="blog-posts" class="space-y-6">
-          <p class="text-lg text-gray-400">Loading blog posts...</p>
+          <p class="text-lg text-#4a5568">Loading blog posts...</p>
         </div>
       </section>
 
       <!-- Contact -->
-      <section>
-        <h2 class="section-title text-2xl mb-4">Connect</h2>
-        <p class="text-lg">
-          Email:
-          <a
-            href="mailto:sayhi@bhaweshchaudhary.com.np"
-            class="text-red-500 hover:underline"
-            >sayhi@bhaweshchaudhary.com.np</a
-          >
-        </p>
-        <p class="text-lg">
-          Portfolio:
-          <a
-            href="https://bhaweshchaudhary.com.np"
-            class="text-red-500 hover:underline"
-            >bhaweshchaudhary.com.np</a
-          >
-        </p>
-        <p class="text-lg">
-          X:
-          <a
-            href="https://www.x.com/bhawesh_x/"
-            class="text-red-500 hover:underline"
-            >bhawesh_x</a
-          >
-        </p>
-        <p class="text-lg">
-          LinkedIn:
-          <a
-            href="https://www.linkedin.com/in/bhaweshchaudhary/"
-            class="text-red-500 hover:underline"
-            >bhaweshchaudhary</a
-          >
-        </p>
-        <p class="text-lg">
-          HackTheBox:
-          <a
-            href="https://app.hackthebox.com/profile/388461"
-            class="text-red-500 hover:underline"
-            >bhaweshchaudhary</a
-          >
-        </p>
-        <p class="text-lg">
-          TryHackMe:
-          <a
-            href="https://tryhackme.com/p/callmebhawesh"
-            class="text-red-500 hover:underline"
-            >bhaweshchaudhary</a
-          >
-        </p>
-        <p class="text-lg">
-          HackerOne:
-          <a
-            href="https://hackerone.com/bhaweshx"
-            class="text-red-500 hover:underline"
-            >bhaweshx</a
-          >
-        </p>
-        <p class="text-lg">
-          Bugcrowd:
-          <a
-            href="https://bugcrowd.com/bhaweshx"
-            class="text-red-500 hover:underline"
-            >bhaweshx</a
-          >
-        </p>
-        <p class="text-lg">
-          DEV Community:
-          <a href="https://dev.to/xybersec" class="text-red-500 hover:underline"
-            >xybersec</a
-          >
-        </p>
+      <section class="section pop-in">
+        <h2 class="section-title text-2xl mb-4">Contact</h2>
+        <div class="card">
+          <p class="text-lg">
+            Email:
+            <a
+              href="mailto:sayhi@bhaweshchaudhary.com.np"
+              class="text-#2b6cb0 hover:underline"
+              >sayhi@bhaweshchaudhary.com.np</a
+            >
+          </p>
+          <p class="text-lg">
+            Portfolio:
+            <a
+              href="https://bhaweshchaudhary.com.np"
+              class="text-#2b6cb0 hover:underline"
+              >bhaweshchaudhary.com.np</a
+            >
+          </p>
+          <p class="text-lg">
+            X:
+            <a
+              href="https://www.x.com/bhawesh_x/"
+              class="text-#2b6cb0 hover:underline"
+              >bhawesh_x</a
+            >
+          </p>
+          <p class="text-lg">
+            LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/bhaweshchaudhary/"
+              class="text-#2b6cb0 hover:underline"
+              >bhaweshchaudhary</a
+            >
+          </p>
+          <p class="text-lg">
+            GitHub:
+            <a
+              href="https://github.com/bhaweshchaudhary"
+              class="text-#2b6cb0 hover:underline"
+              >bhaweshchaudhary</a
+            >
+          </p>
+          <p class="text-lg">
+            DEV Community:
+            <a
+              href="https://dev.to/xybersec"
+              class="text-#2b6cb0 hover:underline"
+              >xybersec</a
+            >
+          </p>
+        </div>
       </section>
     </main>
 
-    <footer class="bg-black py-4 text-center text-gray-400">
+    <footer class="bg-white py-4 text-center text-#4a5568 shadow-md">
       <p>
-        © <span id="year"></span> Bhawesh Chaudhary. Ready to secure the digital
-        frontier.
+        © <span id="year"></span> Bhawesh Chaudhary. Engineering robust
+        solutions for a connected world.
       </p>
     </footer>
 
@@ -392,22 +423,19 @@
 
           if (posts.length === 0) {
             blogPostsContainer.innerHTML =
-              '<p class="text-lg text-gray-400">No posts yet, come back later!</p>';
+              '<p class="text-lg text-#4a5568">No posts yet, come back later!</p>';
             return;
           }
 
           blogPostsContainer.innerHTML = "";
           posts.forEach((post, index) => {
-            // Sanitize content to prevent XSS
             const stripHtml = (html) => {
               const tempDiv = document.createElement("div");
               tempDiv.innerHTML = html;
               return tempDiv.textContent || tempDiv.innerText || "";
             };
 
-            // Use post title or fallback
             const postTitle = post.title || "No Title Available";
-            // Use description as a preview, fallback to body excerpt
             const displayContent =
               post.description ||
               (post.body_html
@@ -416,23 +444,38 @@
             const postDate = new Date(post.published_at).toLocaleDateString();
 
             const postElement = document.createElement("div");
-            postElement.className = "hover-glow p-4 rounded-lg bg-gray-900";
+            postElement.className = "card";
             postElement.innerHTML = `
               <h3 class="text-xl font-bold">${postTitle}</h3>
-              <p class="text-sm text-gray-400">${postDate}</p>
+              <p class="text-sm text-#4a5568">${postDate}</p>
               <div id="full-content-${index}" class="blog-content mt-2 hidden">${displayContent}</div>
-              <a href="${post.url}" class="text-red-500 hover:underline mt-2 inline-block focus:outline-none" target="_blank">Read More on DEV</a>
+              <a href="${post.url}" class="text-#2b6cb0 hover:underline mt-2 inline-block focus:outline-none" target="_blank">Read More on DEV</a>
             `;
             blogPostsContainer.appendChild(postElement);
           });
         } catch (error) {
           console.error("Error fetching blog posts:", error.message);
-          blogPostsContainer.innerHTML = `<p class="text-lg text-gray-400">Unable to load blog posts: ${error.message}. Please check the console for details.</p>`;
+          blogPostsContainer.innerHTML = `<p class="text-lg text-#4a5568">Unable to load blog posts: ${error.message}. Please check the console for details.</p>`;
         }
       }
 
       // Fetch posts when the page loads
       fetchBlogPosts();
+
+      // Intersection Observer for pop-in animations
+      const sections = document.querySelectorAll(".section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("pop-in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      sections.forEach((section) => observer.observe(section));
     </script>
   </body>
 </html>
