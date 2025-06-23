@@ -15,7 +15,10 @@
       gtag("config", "G-KPWRH13NBT");
     </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Bhawesh Chaudhary - Architecting Innovation, Building Futures</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
@@ -31,6 +34,7 @@
         overflow-x: hidden;
         margin: 0;
         position: relative;
+        box-sizing: border-box;
       }
       body::before {
         content: "";
@@ -68,23 +72,23 @@
       }
       .section-title {
         font-family: "Orbitron", sans-serif;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         font-weight: 900;
         text-transform: uppercase;
         color: #d6e0ff;
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         position: relative;
-        text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
       }
       .section-title::after {
         content: "";
         position: absolute;
-        bottom: -10px;
+        bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
-        width: 120px;
-        height: 5px;
+        width: 100px;
+        height: 4px;
         background: linear-gradient(90deg, #00faff, #ff007a);
         border-radius: 2px;
         animation: glow 3s ease-in-out infinite;
@@ -92,10 +96,10 @@
       @keyframes glow {
         0%,
         100% {
-          box-shadow: 0 0 10px rgba(0, 250, 255, 0.5);
+          box-shadow: 0 0 8px rgba(0, 250, 255, 0.5);
         }
         50% {
-          box-shadow: 0 0 20px rgba(255, 0, 122, 0.7);
+          box-shadow: 0 0 15px rgba(255, 0, 122, 0.7);
         }
       }
       .card {
@@ -104,16 +108,17 @@
           rgba(255, 255, 255, 0.03),
           rgba(255, 255, 255, 0.01)
         );
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        padding: 2.5rem;
+        border-radius: 12px;
+        padding: 1.5rem;
         border: 1px solid rgba(0, 250, 255, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease,
           border-color 0.3s ease;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         position: relative;
         overflow: hidden;
         z-index: 1;
+        box-sizing: border-box;
+        max-width: 100%;
       }
       .card::before {
         content: "";
@@ -134,7 +139,7 @@
       }
       .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         border-color: rgba(255, 0, 122, 0.3);
       }
       .card:hover::before {
@@ -146,12 +151,14 @@
           rgba(0, 250, 255, 0.05),
           rgba(255, 0, 122, 0.03)
         );
-        border-radius: 15px;
-        padding: 2.5rem;
+        border-radius: 12px;
+        padding: 1.5rem;
         border: 1px solid rgba(255, 255, 255, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
         overflow: hidden;
+        box-sizing: border-box;
+        max-width: 100%;
       }
       .startup-card::before {
         content: "";
@@ -179,32 +186,37 @@
       }
       .startup-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       }
       .scroll-to-top {
         display: none;
         position: fixed;
-        bottom: 40px;
-        right: 40px;
+        bottom: 2rem;
+        right: 2rem;
         background: linear-gradient(45deg, #00faff, #ff007a);
         color: #ffffff;
-        padding: 15px;
+        padding: 1rem;
         border-radius: 50%;
         cursor: pointer;
         transition: transform 0.3s ease, opacity 0.3s ease;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         z-index: 1000;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .scroll-to-top:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
         opacity: 0.9;
       }
       .blog-content {
         color: #c3d1ff;
-        line-height: 1.7;
+        line-height: 1.6;
       }
       .blog-content p {
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
       }
       .blog-content a {
         color: #00faff;
@@ -222,18 +234,18 @@
       @keyframes glowText {
         from {
           opacity: 0;
-          transform: scale(0.9) translateY(30px);
+          transform: scale(0.9) translateY(20px);
           text-shadow: 0 0 0 rgba(0, 250, 255, 0);
         }
         to {
           opacity: 1;
           transform: scale(1) translateY(0);
-          text-shadow: 0 0 20px rgba(0, 250, 255, 0.5);
+          text-shadow: 0 0 15px rgba(0, 250, 255, 0.5);
         }
       }
       .reveal {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
         animation: revealUp 1.2s ease-out forwards;
       }
       @keyframes revealUp {
@@ -247,6 +259,9 @@
       }
       a {
         transition: color 0.3s ease, border-color 0.3s ease;
+        touch-action: manipulation;
+        min-height: 44px;
+        display: inline-block;
       }
       a:hover {
         color: #ff007a;
@@ -259,6 +274,7 @@
         background-size: cover;
         overflow: hidden;
         z-index: 1;
+        padding: 4rem 1rem;
       }
       .hero-section::before {
         content: "";
@@ -304,17 +320,18 @@
           transform: translateY(0);
         }
         50% {
-          transform: translateY(-10px);
+          transform: translateY(-8px);
         }
       }
       /* Tech Panels Styles */
       .tech-panels {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        max-width: 100%;
         margin: 0 auto;
-        padding: 2rem 0;
+        padding: 1rem 0;
+        box-sizing: border-box;
       }
       .tech-panel {
         background: linear-gradient(
@@ -323,14 +340,15 @@
           rgba(255, 0, 122, 0.05)
         );
         border: 1px solid rgba(0, 250, 255, 0.2);
-        border-radius: 12px;
-        padding: 2rem;
+        border-radius: 10px;
+        padding: 1.5rem;
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease,
           border-color 0.3s ease;
         position: relative;
         overflow: hidden;
         z-index: 1;
+        box-sizing: border-box;
       }
       .tech-panel::before {
         content: "";
@@ -349,8 +367,8 @@
         transition: opacity 0.3s ease;
       }
       .tech-panel:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 20px rgba(0, 250, 255, 0.4);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 250, 255, 0.4);
         border-color: rgba(255, 0, 122, 0.4);
       }
       .tech-panel:hover::before {
@@ -358,15 +376,15 @@
       }
       .tech-panel h3 {
         font-family: "Orbitron", sans-serif;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: 700;
         color: #d6e0ff;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.6rem;
       }
       .tech-panel p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         color: #c3d1ff;
-        line-height: 1.5;
+        line-height: 1.4;
       }
       .tech-panel::after {
         content: "";
@@ -388,32 +406,124 @@
       .tech-panel:hover::after {
         bottom: -30%;
       }
+      /* Fallback for backdrop-filter */
+      .card,
+      .startup-card,
+      .tech-panel {
+        background-color: rgba(
+          30,
+          30,
+          74,
+          0.9
+        ); /* Fallback for browsers without backdrop-filter support */
+      }
+      /* Media Queries for Mobile */
+      @media (max-width: 640px) {
+        .section-title {
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+        }
+        .section-title::after {
+          width: 80px;
+          height: 3px;
+        }
+        .hero-section {
+          padding: 2rem 1rem;
+        }
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+        }
+        .card,
+        .startup-card {
+          padding: 1rem;
+        }
+        .tech-panels {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .tech-panel {
+          padding: 1rem;
+        }
+        .tech-panel h3 {
+          font-size: 1rem;
+        }
+        .tech-panel p {
+          font-size: 0.85rem;
+        }
+        .card h3,
+        .startup-card h3 {
+          font-size: 1.25rem;
+        }
+        .card p,
+        .startup-card p,
+        .blog-content {
+          font-size: 0.9rem;
+        }
+        .scroll-to-top {
+          bottom: 1.5rem;
+          right: 1.5rem;
+          width: 44px;
+          height: 44px;
+          padding: 0.75rem;
+        }
+        .scroll-to-top svg {
+          width: 24px;
+          height: 24px;
+        }
+        main {
+          padding: 1rem;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+      }
+      @media (max-width: 360px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+        .hero-content p {
+          font-size: 0.9rem;
+        }
+        .section-title {
+          font-size: 1.75rem;
+        }
+        .tech-panel h3 {
+          font-size: 0.9rem;
+        }
+        .tech-panel p {
+          font-size: 0.8rem;
+        }
+      }
     </style>
   </head>
   <body>
-    <header class="hero-section py-36 text-center header-animation">
+    <header class="hero-section text-center header-animation">
       <div class="stars"></div>
       <div class="hero-content">
         <h1
-          class="text-6xl md:text-8xl font-extrabold text-#d6e0ff drop-shadow-2xl"
+          class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-#d6e0ff drop-shadow-2xl"
           style="font-family: 'Orbitron', sans-serif"
         >
           Bhawesh Chaudhary
         </h1>
         <p
-          class="text-xl md:text-3xl text-#c3d1ff mt-4 max-w-3xl mx-auto drop-shadow-lg"
+          class="text-lg sm:text-xl md:text-2xl text-#c3d1ff mt-4 max-w-3xl mx-auto drop-shadow-lg"
         >
           Java Developer | System Architect | Visionary Entrepreneur
         </p>
       </div>
     </header>
 
-    <main class="max-w-6xl mx-auto p-8 space-y-28">
+    <main class="max-w-6xl mx-auto p-4 sm:p-8 space-y-20 sm:space-y-28">
       <!-- Objective -->
       <section id="objective" class="section reveal">
         <h2 class="section-title">Objective</h2>
         <div class="card">
-          <p class="text-lg leading-relaxed text-#c3d1ff">
+          <p class="text-base sm:text-lg leading-relaxed text-#c3d1ff">
             Driven Java developer with expertise in crafting scalable backend
             systems using Spring Boot and Apache Kafka. Passionate about solving
             complex challenges with elegant code, leading innovative ventures,
@@ -426,79 +536,119 @@
       <!-- Experience -->
       <section id="experience" class="section reveal">
         <h2 class="section-title">Experience</h2>
-        <div class="space-y-12">
+        <div class="space-y-8 sm:space-y-12">
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
               Software Engineer | A5 IT, Naples, Florida (Remote)
             </h3>
             <p class="text-sm text-#a3bffa">Jan 2025 - Feb 2025</p>
-            <ul class="list-none mt-6 space-y-4">
+            <ul class="list-none mt-4 sm:mt-6 space-y-3 sm:space-y-4">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Led critical feature development, ensuring timely delivery
-                through close collaboration with team leads.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Led critical feature development, ensuring timely delivery
+                  through close collaboration with team leads.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Mentored junior developers, fostering best practices and
-                alignment with project objectives.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Mentored junior developers, fostering best practices and
+                  alignment with project objectives.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Streamlined cross-functional workflows, resolving blockers to
-                deliver high-quality software.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Streamlined cross-functional workflows, resolving blockers to
+                  deliver high-quality software.</span
+                >
               </li>
             </ul>
           </div>
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
               Associate Software Engineer | A5 IT, Naples, Florida (Remote)
             </h3>
             <p class="text-sm text-#a3bffa">Nov 2023 - Feb 2025</p>
-            <ul class="list-none mt-6 space-y-4">
+            <ul class="list-none mt-4 sm:mt-6 space-y-3 sm:space-y-4">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Automated stock synchronization for Amazon, eBay, and
-                WooCommerce, slashing manual workloads.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Automated stock synchronization for Amazon, eBay, and
+                  WooCommerce, slashing manual workloads.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Built data validation pipelines, boosting listing accuracy and
-                minimizing errors.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Built data validation pipelines, boosting listing accuracy
+                  and minimizing errors.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Launched a multi-channel listing system, enhancing sales and
-                visibility across platforms.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Launched a multi-channel listing system, enhancing sales and
+                  visibility across platforms.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Improved customer engagement with automated workflows, cutting
-                response times.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Improved customer engagement with automated workflows,
+                  cutting response times.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Integrated HubSpot CRM for seamless deal tracking and data
-                synchronization.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Integrated HubSpot CRM for seamless deal tracking and data
+                  synchronization.</span
+                >
               </li>
             </ul>
           </div>
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
               Associate Software Engineer (Intern) | A5 IT, Naples, Florida
               (Remote)
             </h3>
             <p class="text-sm text-#a3bffa">Aug 2023 - Nov 2023</p>
-            <ul class="list-none mt-6 space-y-4">
+            <ul class="list-none mt-4 sm:mt-6 space-y-3 sm:space-y-4">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Supported backend automation for stock and CRM integration,
-                reducing errors significantly.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Supported backend automation for stock and CRM integration,
+                  reducing errors significantly.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Contributed to RESTful API development, improving system
-                synchronization and efficiency.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Contributed to RESTful API development, improving system
+                  synchronization and efficiency.</span
+                >
               </li>
             </ul>
           </div>
@@ -508,71 +658,101 @@
       <!-- Startups -->
       <section id="startups" class="section reveal">
         <h2 class="section-title">Startups</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           <div class="startup-card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
               Hyper Media Productions
             </h3>
             <p class="text-sm text-#a3bffa">Dec 2024 - Present</p>
-            <p class="mt-4 text-lg leading-relaxed text-#c3d1ff">
+            <p
+              class="mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed text-#c3d1ff"
+            >
               A dynamic media studio dedicated to transforming stories into
               unforgettable visuals. From cinematic commercials to vibrant music
               videos and films, we craft immersive content that resonates with
               audiences and amplifies brand narratives.
             </p>
-            <ul class="list-none mt-4 space-y-3">
+            <ul class="list-none mt-3 sm:mt-4 space-y-2 sm:space-y-3">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Developing a next-gen content platform for seamless media
-                management.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Developing a next-gen content platform for seamless media
+                  management.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Harnessing AI to streamline video editing and audience
-                analytics.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Harnessing AI to streamline video editing and audience
+                  analytics.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Partnering with brands to create visually stunning marketing
-                campaigns.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Partnering with brands to create visually stunning marketing
+                  campaigns.</span
+                >
               </li>
             </ul>
             <a
               href="https://hypermediaproductions.com"
-              class="mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-3 sm:mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
               target="_blank"
               >Visit hypermediaproductions.com</a
             >
           </div>
           <div class="startup-card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">Hyper Xenc</h3>
+            <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
+              Hyper Xenc
+            </h3>
             <p class="text-sm text-#a3bffa">Jun 2024 - Present</p>
-            <p class="mt-4 text-lg leading-relaxed text-#c3d1ff">
+            <p
+              class="mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed text-#c3d1ff"
+            >
               An innovative product development studio focused on building
               scalable, user-centric solutions. From intuitive design to rapid
               MVP development, we empower businesses to turn ideas into
               impactful products that drive growth.
             </p>
-            <ul class="list-none mt-4 space-y-3">
+            <ul class="list-none mt-3 sm:mt-4 space-y-2 sm:space-y-3">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Creating scalable software architectures for high-growth
-                startups.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Creating scalable software architectures for high-growth
+                  startups.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Designing user-friendly interfaces to enhance customer
-                experiences.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Designing user-friendly interfaces to enhance customer
+                  experiences.</span
+                >
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
-                Delivering MVPs to accelerate market entry and validate business
-                ideas.
+                <span class="text-#00faff mr-2 sm:mr-3 text-lg sm:text-xl"
+                  >→</span
+                >
+                <span
+                  >Delivering MVPs to accelerate market entry and validate
+                  business ideas.</span
+                >
               </li>
             </ul>
             <a
               href="https://hyperxenc.com"
-              class="mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-3 sm:mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
               target="_blank"
               >Visit hyperxenc.com</a
             >
@@ -608,9 +788,9 @@
       <!-- Projects -->
       <section id="projects" class="section reveal">
         <h2 class="section-title">Projects</h2>
-        <div class="space-y-10">
+        <div class="space-y-8 sm:space-y-10">
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
               Astra:
               <span
                 ><a
@@ -629,7 +809,7 @@
               >
             </h3>
             <p class="text-sm text-#a3bffa">May 2025 - Present</p>
-            <p class="mt-4 text-#c3d1ff">
+            <p class="mt-3 sm:mt-4 text-#c3d1ff">
               Engineered a Python-based CLI tool for advanced network analysis,
               featuring extensible plugins and concurrent processing. Integrated
               Docker for seamless containerized deployment, optimizing
@@ -637,7 +817,7 @@
             </p>
           </div>
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
               Team For Film:
               <span
                 ><a
@@ -648,7 +828,7 @@
               >
             </h3>
             <p class="text-sm text-#a3bffa">Feb 2025 - Apr 2025</p>
-            <p class="mt-4 text-#c3d1ff">
+            <p class="mt-3 sm:mt-4 text-#c3d1ff">
               Developed a TypeScript and Node.js-powered web platform with
               Firebase integration, streamlining film collaboration and project
               management for Nepali director Navin Awal.
@@ -661,14 +841,14 @@
       <section id="publications" class="section reveal">
         <h2 class="section-title">Publications</h2>
         <div class="card">
-          <h3 class="text-2xl font-bold text-#d6e0ff">
+          <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
             ASAN, THE TRADITIONAL MARKET OF KATHMANDU VALLEY: ANALYZING MARKET
             TREND AND CONSUMER BUYING BEHAVIOR OF SUCH MARKET
           </h3>
           <p class="text-sm text-#a3bffa">
             EDUMALSYS Journal of Research in Education Management · Nov 3, 2023
           </p>
-          <p class="mt-4 text-#c3d1ff">
+          <p class="mt-3 sm:mt-4 text-#c3d1ff">
             Asan is a hub for business in the Kathmandu valley famed for its
             bazaar, festive calendar, and historic location. This research looks
             at how the market is changing and how people shop in Asan, which is
@@ -676,7 +856,7 @@
           </p>
           <a
             href="https://ejournal.yasin-alsys.org/edumalsys/article/view/2048/1673"
-            class="mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+            class="mt-3 sm:mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
             target="_blank"
             >Read Article</a
           >
@@ -687,7 +867,7 @@
       <section id="education" class="section reveal">
         <h2 class="section-title">Education</h2>
         <div class="card">
-          <h3 class="text-2xl font-bold text-#d6e0ff">
+          <h3 class="text-xl sm:text-2xl font-bold text-#d6e0ff">
             B.Tech in Computer Science and System Engineering
           </h3>
           <p class="text-sm text-#a3bffa">
@@ -701,7 +881,7 @@
         <h2 class="section-title">Certifications</h2>
         <div class="space-y-8">
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               Software Engineer | HackerRank
             </h3>
             <p class="text-sm text-#a3bffa">
@@ -715,13 +895,13 @@
             >
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               Java Programming | Great Learning
             </h3>
             <p class="text-sm text-#a3bffa">Issued Nov 2023</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               (ISC)² Candidate | ISC2
             </h3>
             <p class="text-sm text-#a3bffa">
@@ -729,7 +909,7 @@
             </p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               Microsoft Certified: Azure AI Fundamentals | Microsoft
             </h3>
             <p class="text-sm text-#a3bffa">Issued Oct 2022</p>
@@ -741,7 +921,7 @@
             >
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               MTA: Database Fundamentals | Microsoft
             </h3>
             <p class="text-sm text-#a3bffa">Issued Jun 2022</p>
@@ -753,25 +933,25 @@
             >
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               Python Fundamentals for Beginners | Great Learning
             </h3>
             <p class="text-sm text-#a3bffa">Issued Jun 2022</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               Data Engineering for Everyone | DataCamp
             </h3>
             <p class="text-sm text-#a3bffa">Issued Apr 2022</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               Python | W3Schools.com
             </h3>
             <p class="text-sm text-#a3bffa">Issued Apr 2022</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               Python Core | Sololearn
             </h3>
             <p class="text-sm text-#a3bffa">
@@ -785,7 +965,7 @@
             >
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-lg sm:text-xl font-bold text-#d6e0ff">
               Algorithmic Toolbox | Coursera
             </h3>
             <p class="text-sm text-#a3bffa">
@@ -814,17 +994,17 @@
       <!-- Blog Section -->
       <section id="blog" class="section reveal">
         <h2 class="section-title">Technical Blog</h2>
-        <div id="blog-posts" class="space-y-10">
-          <p class="text-lg text-#a3bffa">Loading blog posts...</p>
+        <div id="blog-posts" class="space-y-8 sm:space-y-10">
+          <p class="text-base sm:text-lg text-#a3bffa">Loading blog posts...</p>
         </div>
       </section>
 
       <!-- Contact -->
       <section id="contact" class="section reveal">
         <h2 class="section-title">Contact</h2>
-        <div class="card grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           <div>
-            <p class="text-lg mb-4 text-#c3d1ff">
+            <p class="text-base sm:text-lg mb-3 sm:mb-4 text-#c3d1ff">
               Email:
               <a
                 href="mailto:sayhi@bhaweshchaudhary.com.np"
@@ -833,7 +1013,7 @@
                 sayhi@bhaweshchaudhary.com.np
               </a>
             </p>
-            <p class="text-lg mb-4 text-#c3d1ff">
+            <p class="text-base sm:text-lg mb-3 sm:mb-4 text-#c3d1ff">
               Portfolio:
               <a
                 href="https://bhaweshchaudhary.com.np"
@@ -844,7 +1024,7 @@
             </p>
           </div>
           <div>
-            <p class="text-lg mb-4 text-#c3d1ff">
+            <p class="text-base sm:text-lg mb-3 sm:mb-4 text-#c3d1ff">
               X:
               <a
                 href="https://www.x.com/bhawesh_x/"
@@ -853,7 +1033,7 @@
                 bhawesh_x
               </a>
             </p>
-            <p class="text-lg mb-4 text-#c3d1ff">
+            <p class="text-base sm:text-lg mb-3 sm:mb-4 text-#c3d1ff">
               LinkedIn:
               <a
                 href="https://www.linkedin.com/in/bhaweshchaudhary/"
@@ -862,7 +1042,7 @@
                 bhaweshchaudhary
               </a>
             </p>
-            <p class="text-lg text-#c3d1ff">
+            <p class="text-base sm:text-lg text-#c3d1ff">
               GitHub:
               <a
                 href="https://github.com/bhaweshchaudhary"
@@ -879,7 +1059,7 @@
     <div id="scrollToTop" class="scroll-to-top">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-7 w-7"
+        class="h-6 w-6 sm:h-7 sm:w-7"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -897,7 +1077,7 @@
       // Scroll-to-top functionality
       const scrollToTop = document.getElementById("scrollToTop");
       window.addEventListener("scroll", () => {
-        scrollToTop.style.display = window.scrollY > 300 ? "block" : "none";
+        scrollToTop.style.display = window.scrollY > 300 ? "flex" : "none";
       });
       scrollToTop.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -920,7 +1100,7 @@
 
           if (posts.length === 0) {
             blogPostsContainer.innerHTML =
-              '<p class="text-lg text-#a3bffa">No posts yet, come back later!</p>';
+              '<p class="text-base sm:text-lg text-#a3bffa">No posts yet, come back later!</p>';
             return;
           }
 
@@ -936,23 +1116,23 @@
             const displayContent =
               post.description ||
               (post.body_html
-                ? stripHtml(post.body_html).substring(0, 200) + "..."
+                ? stripHtml(post.body_html).substring(0, 150) + "..."
                 : "No content available");
             const postDate = new Date(post.published_at).toLocaleDateString();
 
             const postElement = document.createElement("div");
             postElement.className = "card";
             postElement.innerHTML = `
-            <h3 class="text-2xl font-bold text-#d6e0ff">${postTitle}</h3>
+            <h3 class="text-lg sm:text-2xl font-bold text-#d6e0ff">${postTitle}</h3>
             <p class="text-sm text-#a3bffa">${postDate}</p>
-            <div class="blog-content mt-4">${displayContent}</div>
-            <a href="${post.url}" class="text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a mt-4 inline-block focus:outline-none" target="_blank">Read More on DEV</a>
+            <div class="blog-content mt-3 sm:mt-4">${displayContent}</div>
+            <a href="${post.url}" class="text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a mt-3 sm:mt-4 inline-block focus:outline-none" target="_blank">Read More on DEV</a>
           `;
             blogPostsContainer.appendChild(postElement);
           });
         } catch (error) {
           console.error("Error fetching blog posts:", error.message);
-          blogPostsContainer.innerHTML = `<p class="text-lg text-#a3bffa">Unable to load blog posts: ${error.message}. Please check the console for details.</p>`;
+          blogPostsContainer.innerHTML = `<p class="text-base sm:text-lg text-#a3bffa">Unable to load blog posts: ${error.message}. Please check the console for details.</p>`;
         }
       }
 
