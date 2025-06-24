@@ -28,12 +28,13 @@
     <style>
       body {
         font-family: "Roboto Mono", monospace;
-        background: #0a0a2a; /* Fallback solid color */
+        background: #0a0a2a; /* Solid fallback */
         background: linear-gradient(180deg, #0a0a2a 0%, #1e1e4a 100%);
         color: #d6e0ff;
         min-height: 100vh;
-        overflow-x: hidden;
         margin: 0;
+        padding: 0;
+        overflow-x: hidden;
         position: relative;
         box-sizing: border-box;
       }
@@ -214,7 +215,7 @@
         opacity: 0.9;
       }
       .blog-content {
-        color: #c3d1ff;
+        color: #d6e0ff;
         line-height: 1.6;
       }
       .blog-content p {
@@ -277,6 +278,8 @@
         overflow: hidden;
         z-index: 1;
         padding: 6rem 1rem;
+        max-width: 100%;
+        box-sizing: border-box;
       }
       .hero-section::before {
         content: "";
@@ -336,6 +339,7 @@
         margin: 0 auto;
         padding: 2rem 0;
         box-sizing: border-box;
+        overflow-x: hidden;
       }
       .tech-panel {
         background: linear-gradient(
@@ -353,6 +357,7 @@
         overflow: hidden;
         z-index: 1;
         box-sizing: border-box;
+        max-width: 100%;
       }
       .tech-panel::before {
         content: "";
@@ -387,7 +392,7 @@
       }
       .tech-panel p {
         font-size: 0.95rem;
-        color: #c3d1ff;
+        color: #d6e0ff;
         line-height: 1.5;
       }
       .tech-panel::after {
@@ -421,35 +426,44 @@
           0.9
         ); /* Fallback for browsers without backdrop-filter support */
       }
-      /* Media Queries Adjusted to Match Desktop */
-      @media (max-width: 640px) {
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
         .hero-section {
-          padding: 6rem 1rem;
+          padding: 4rem 1rem;
         }
+        .hero-content h1 {
+          font-size: 4rem;
+        }
+        .hero-content p {
+          font-size: 1.5rem;
+        }
+        .tech-panels {
+          grid-template-columns: 1fr;
+        }
+        .card,
+        .startup-card {
+          padding: 1.5rem;
+        }
+        .tech-panel {
+          padding: 1.5rem;
+        }
+        .section-title {
+          font-size: 2.5rem;
+        }
+        main {
+          padding: 1rem;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 480px) {
         .hero-content h1 {
           font-size: 3rem;
         }
         .hero-content p {
-          font-size: 1.25rem;
-        }
-        .tech-panels {
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-        .card,
-        .startup-card {
-          padding: 2.5rem;
-        }
-        .tech-panel {
-          padding: 2rem;
+          font-size: 1.2rem;
         }
         .section-title {
-          font-size: 3.5rem;
-        }
-        main {
-          padding: 1rem;
-          margin: 0 auto;
-          width: 100%;
-          max-width: 1200px;
+          font-size: 2rem;
         }
       }
     </style>
@@ -465,19 +479,19 @@
           Bhawesh Chaudhary
         </h1>
         <p
-          class="text-xl md:text-3xl text-#c3d1ff mt-4 max-w-3xl mx-auto drop-shadow-lg"
+          class="text-xl md:text-3xl text-#d6e0ff mt-4 max-w-3xl mx-auto drop-shadow-lg"
         >
           Java Developer | System Architect | Visionary Entrepreneur
         </p>
       </div>
     </header>
 
-    <main class="max-w-6xl mx-auto p-8 space-y-28">
+    <main class="max-w-6xl mx-auto p-8 space-y-28" style="overflow-x: hidden">
       <!-- Objective -->
       <section id="objective" class="section reveal">
         <h2 class="section-title">Objective</h2>
         <div class="card">
-          <p class="text-lg leading-relaxed text-#c3d1ff">
+          <p class="text-lg leading-relaxed text-#d6e0ff">
             Driven Java developer with expertise in crafting scalable backend
             systems using Spring Boot and Apache Kafka. Passionate about solving
             complex challenges with elegant code, leading innovative ventures,
@@ -578,7 +592,7 @@
               Hyper Media Productions
             </h3>
             <p class="text-sm text-#a3bffa">Dec 2024 - Present</p>
-            <p class="mt-4 text-lg leading-relaxed text-#c3d1ff">
+            <p class="mt-4 text-lg leading-relaxed text-#d6e0ff">
               A dynamic media studio dedicated to transforming stories into
               unforgettable visuals. From cinematic commercials to vibrant music
               videos and films, we craft immersive content that resonates with
@@ -611,7 +625,7 @@
           <div class="startup-card">
             <h3 class="text-2xl font-bold text-#d6e0ff">Hyper Xenc</h3>
             <p class="text-sm text-#a3bffa">Jun 2024 - Present</p>
-            <p class="mt-4 text-lg leading-relaxed text-#c3d1ff">
+            <p class="mt-4 text-lg leading-relaxed text-#d6e0ff">
               An innovative product development studio focused on building
               scalable, user-centric solutions. From intuitive design to rapid
               MVP development, we empower businesses to turn ideas into
@@ -693,7 +707,7 @@
               >
             </h3>
             <p class="text-sm text-#a3bffa">May 2025 - Present</p>
-            <p class="mt-4 text-#c3d1ff">
+            <p class="mt-4 text-#d6e0ff">
               Engineered a Python-based CLI tool for advanced network analysis,
               featuring extensible plugins and concurrent processing. Integrated
               Docker for seamless containerized deployment, optimizing
@@ -712,7 +726,7 @@
               >
             </h3>
             <p class="text-sm text-#a3bffa">Feb 2025 - Apr 2025</p>
-            <p class="mt-4 text-#c3d1ff">
+            <p class="mt-4 text-#d6e0ff">
               Developed a TypeScript and Node.js-powered web platform with
               Firebase integration, streamlining film collaboration and project
               management for Nepali director Navin Awal.
@@ -732,7 +746,7 @@
           <p class="text-sm text-#a3bffa">
             EDUMALSYS Journal of Research in Education Management · Nov 3, 2023
           </p>
-          <p class="mt-4 text-#c3d1ff">
+          <p class="mt-4 text-#d6e0ff">
             Asan is a hub for business in the Kathmandu valley famed for its
             bazaar, festive calendar, and historic location. This research looks
             at how the market is changing and how people shop in Asan, which is
@@ -869,7 +883,7 @@
       <section id="awards" class="section reveal">
         <h2 class="section-title">Awards</h2>
         <div class="card">
-          <p class="text-#c3d1ff">
+          <p class="text-#d6e0ff">
             Second Prize, Smart India Hackathon (Internal) | 2023
           </p>
         </div>
@@ -888,7 +902,7 @@
         <h2 class="section-title">Contact</h2>
         <div class="card grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <p class="text-lg mb-4 text-#c3d1ff">
+            <p class="text-lg mb-4 text-#d6e0ff">
               Email:
               <a
                 href="mailto:sayhi@bhaweshchaudhary.com.np"
@@ -897,7 +911,7 @@
                 sayhi@bhaweshchaudhary.com.np
               </a>
             </p>
-            <p class="text-lg mb-4 text-#c3d1ff">
+            <p class="text-lg mb-4 text-#d6e0ff">
               Portfolio:
               <a
                 href="https://bhaweshchaudhary.com.np"
@@ -908,7 +922,7 @@
             </p>
           </div>
           <div>
-            <p class="text-lg mb-4 text-#c3d1ff">
+            <p class="text-lg mb-4 text-#d6e0ff">
               X:
               <a
                 href="https://www.x.com/bhawesh_x/"
@@ -917,7 +931,7 @@
                 bhawesh_x
               </a>
             </p>
-            <p class="text-lg mb-4 text-#c3d1ff">
+            <p class="text-lg mb-4 text-#d6e0ff">
               LinkedIn:
               <a
                 href="https://www.linkedin.com/in/bhaweshchaudhary/"
@@ -926,7 +940,7 @@
                 bhaweshchaudhary
               </a>
             </p>
-            <p class="text-lg text-#c3d1ff">
+            <p class="text-lg text-#d6e0ff">
               GitHub:
               <a
                 href="https://github.com/bhaweshchaudhary"
