@@ -22,15 +22,14 @@
     <title>Bhawesh Chaudhary - Architecting Innovation, Building Futures</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700;900&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
-        font-family: "Roboto Mono", monospace;
-        background: #0a0a2a; /* Solid fallback */
-        background: linear-gradient(180deg, #0a0a2a 0%, #1e1e4a 100%);
-        color: #d6e0ff;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(180deg, #1f2526 0%, #3a4142 100%);
+        color: #f8f9fa;
         min-height: 100vh;
         margin: 0;
         padding: 0;
@@ -45,211 +44,143 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(
-            circle at 20% 30%,
-            rgba(0, 255, 255, 0.1),
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 70%,
-            rgba(255, 0, 122, 0.1),
-            transparent 60%
-          );
+        background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"%3E%3Cdefs%3E%3Cpattern id="particles" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"%3E%3Ccircle cx="5" cy="5" r="1" fill="%23F8F9FA" fill-opacity="0.2"/%3E%3Ccircle cx="15" cy="15" r="0.8" fill="%232AB7CA" fill-opacity="0.3"/%3E%3Ccircle cx="25" cy="25" r="1.2" fill="%23FE6D73" fill-opacity="0.2"/%3E%3C/pattern%3E%3C/defs%3E%3Crect x="0" y="0" width="100%" height="100%" fill="url(%23particles)"/%3E%3C/svg%3E');
+        animation: particleMove 20s linear infinite;
         z-index: -1;
-        animation: cosmicPulse 25s ease-in-out infinite;
+        opacity: 0.5;
       }
-      @keyframes cosmicPulse {
+      @keyframes particleMove {
         0% {
           transform: translate(0, 0);
-          opacity: 0.7;
-        }
-        50% {
-          transform: translate(3%, 3%) scale(1.03);
-          opacity: 1;
         }
         100% {
-          transform: translate(0, 0);
-          opacity: 0.7;
+          transform: translate(-10px, -10px);
         }
       }
       .section-title {
-        font-family: "Orbitron", sans-serif;
-        font-size: 3.5rem;
-        font-weight: 900;
-        text-transform: uppercase;
-        color: #d6e0ff;
+        font-family: "Poppins", sans-serif;
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #f8f9fa;
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
         position: relative;
-        text-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
-          0 0 5px rgba(0, 255, 255, 0.3);
       }
       .section-title::after {
         content: "";
         position: absolute;
-        bottom: -10px;
+        bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
-        width: 120px;
-        height: 5px;
-        background: linear-gradient(90deg, #00faff, #ff007a);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #2ab7ca, #fe6d73);
         border-radius: 2px;
-        animation: glow 3s ease-in-out infinite;
+        animation: slideIn 1s ease-out;
       }
-      @keyframes glow {
-        0%,
-        100% {
-          box-shadow: 0 0 10px rgba(0, 250, 255, 0.5);
+      @keyframes slideIn {
+        from {
+          width: 0;
         }
-        50% {
-          box-shadow: 0 0 20px rgba(255, 0, 122, 0.7);
+        to {
+          width: 80px;
         }
       }
       .card {
-        background: linear-gradient(
-          135deg,
-          rgba(255, 255, 255, 0.03),
-          rgba(255, 255, 255, 0.01)
-        );
-        border-radius: 15px;
-        padding: 2.5rem;
-        border: 1px solid rgba(0, 250, 255, 0.15);
-        transition: transform 0.3s ease, box-shadow 0.3s ease,
-          border-color 0.3s ease;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        background: rgba(236, 236, 236, 0.1);
+        backdrop-filter: blur(8px);
+        border-radius: 12px;
+        padding: 1.8rem;
+        border: 1px solid rgba(42, 183, 202, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         position: relative;
         overflow: hidden;
         z-index: 1;
         box-sizing: border-box;
         max-width: 100%;
       }
-      .card::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-          45deg,
-          transparent,
-          rgba(0, 250, 255, 0.05),
-          transparent
-        );
-        transform: rotate(45deg);
-        transition: transform 0.3s ease;
-        z-index: -1;
-      }
       .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        border-color: rgba(255, 0, 122, 0.3);
-      }
-      .card:hover::before {
-        transform: rotate(50deg) scale(1.05);
+        transform: translateY(-4px) rotate(1deg);
+        box-shadow: 0 8px 25px rgba(42, 183, 202, 0.3);
       }
       .startup-card {
-        background: linear-gradient(
-          135deg,
-          rgba(0, 250, 255, 0.05),
-          rgba(255, 0, 122, 0.03)
-        );
-        border-radius: 15px;
-        padding: 2.5rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(236, 236, 236, 0.1);
+        backdrop-filter: blur(8px);
+        border-radius: 12px;
+        padding: 1.8rem;
+        border: 1px solid rgba(42, 183, 202, 0.2);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         position: relative;
         overflow: hidden;
         box-sizing: border-box;
         max-width: 100%;
       }
-      .startup-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          circle at top left,
-          rgba(255, 0, 122, 0.2),
-          transparent 60%
-        );
-        z-index: -1;
-        animation: pulseEffect 5s ease infinite;
-      }
-      @keyframes pulseEffect {
-        0%,
-        100% {
-          opacity: 0.2;
-        }
-        50% {
-          opacity: 0.35;
-        }
-      }
       .startup-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        transform: translateY(-4px) rotate(1deg);
+        box-shadow: 0 8px 25px rgba(42, 183, 202, 0.3);
       }
       .scroll-to-top {
         display: none;
         position: fixed;
         bottom: 2rem;
         right: 2rem;
-        background: linear-gradient(45deg, #00faff, #ff007a);
-        color: #ffffff;
-        padding: 1rem;
+        background: linear-gradient(45deg, #2ab7ca, #fe6d73);
+        color: #f8f9fa;
+        padding: 0.8rem;
         border-radius: 50%;
         cursor: pointer;
         transition: transform 0.3s ease, opacity 0.3s ease;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         z-index: 1000;
-        width: 48px;
-        height: 48px;
+        width: 44px;
+        height: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       .scroll-to-top:hover {
         transform: scale(1.1);
-        opacity: 0.9;
+        opacity: 0.95;
       }
       .blog-content {
-        color: #d6e0ff;
-        line-height: 1.6;
+        color: #f8f9fa;
+        line-height: 1.7;
       }
       .blog-content p {
         margin-bottom: 1rem;
       }
       .blog-content a {
-        color: #00faff;
+        color: #2ab7ca;
         text-decoration: none;
-        border-bottom: 2px solid #ff007a;
+        border-bottom: 2px solid #fe6d73;
         transition: border-color 0.3s ease, color 0.3s ease;
       }
       .blog-content a:hover {
-        color: #ff007a;
-        border-color: #00faff;
+        color: #fe6d73;
+        border-color: #2ab7ca;
       }
       .header-animation {
-        animation: glowText 2s ease-out;
+        animation: bounceIn 1.2s ease-out;
       }
-      @keyframes glowText {
-        from {
+      @keyframes bounceIn {
+        0% {
           opacity: 0;
-          transform: scale(0.9) translateY(20px);
-          text-shadow: 0 0 0 rgba(0, 250, 255, 0);
+          transform: scale(0.95) translateY(20px);
         }
-        to {
+        60% {
           opacity: 1;
+          transform: scale(1.02) translateY(-5px);
+        }
+        100% {
           transform: scale(1) translateY(0);
-          text-shadow: 0 0 20px rgba(0, 250, 255, 0.5);
         }
       }
       .reveal {
         opacity: 0;
-        transform: translateY(20px);
-        animation: revealUp 1.2s ease-out forwards;
+        transform: translateY(15px);
+        animation: revealUp 0.8s ease-out forwards;
       }
       @keyframes revealUp {
         to {
@@ -258,7 +189,7 @@
         }
       }
       .section {
-        animation-delay: 0.3s;
+        animation-delay: 0.2s;
       }
       a {
         transition: color 0.3s ease, border-color 0.3s ease;
@@ -267,17 +198,16 @@
         display: inline-block;
       }
       a:hover {
-        color: #ff007a;
+        color: #fe6d73;
       }
-      /* Hero Section Styles */
       .hero-section {
         position: relative;
-        background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%2300faff" fill-opacity="0.15" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,149.3C672,139,768,149,864,170.7C960,192,1056,224,1152,229.3C1248,235,1344,213,1392,202.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"%3E%3C/path%3E%3C/svg%3E')
+        background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%232AB7CA" fill-opacity="0.3" d="M0,160L48,144C96,128,192,96,288,112C384,128,480,192,576,208C672,224,768,192,864,176C960,160,1056,160,1152,176C1248,192,1344,224,1392,240L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"%3E%3C/path%3E%3C/svg%3E')
           no-repeat bottom;
         background-size: cover;
         overflow: hidden;
         z-index: 1;
-        padding: 6rem 1rem;
+        padding: 5rem 1rem;
         max-width: 100%;
         box-sizing: border-box;
       }
@@ -290,36 +220,15 @@
         height: 100%;
         background: linear-gradient(
           135deg,
-          rgba(10, 10, 42, 0.9),
-          rgba(30, 30, 74, 0.7)
+          rgba(31, 37, 38, 0.85),
+          rgba(58, 65, 66, 0.7)
         );
         z-index: -1;
-      }
-      .stars {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"%3E%3Cdefs%3E%3Cpattern id="stars" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"%3E%3Ccircle cx="5" cy="5" r="1" fill="%23d6e0ff" fill-opacity="0.3"/%3E%3Ccircle cx="15" cy="15" r="1.5" fill="%23d6e0ff" fill-opacity="0.5"/%3E%3Ccircle cx="25" cy="25" r="1" fill="%23d6e0ff" fill-opacity="0.4"/%3E%3Ccircle cx="35" cy="35" r="1.2" fill="%23d6e0ff" fill-opacity="0.6"/%3E%3C/pattern%3E%3C/defs%3E%3Crect x="0" y="0" width="100%" height="100%" fill="url(%23stars)"/%3E%3C/svg%3E');
-        animation: twinkle 10s ease infinite;
-        z-index: 0;
-      }
-      @keyframes twinkle {
-        0%,
-        100% {
-          opacity: 0.7;
-        }
-        50% {
-          opacity: 1;
-        }
       }
       .hero-content h1 {
         position: relative;
         z-index: 2;
-        animation: float 4s ease-in-out infinite;
-        text-shadow: 0 0 25px rgba(0, 255, 255, 0.6),
-          0 0 10px rgba(0, 255, 255, 0.4);
+        animation: float 3s ease-in-out infinite;
       }
       @keyframes float {
         0%,
@@ -327,115 +236,64 @@
           transform: translateY(0);
         }
         50% {
-          transform: translateY(-10px);
+          transform: translateY(-6px);
         }
       }
-      /* Tech Panels Styles */
       .tech-panels {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 2rem 0;
+        padding: 1.5rem 0;
         box-sizing: border-box;
         overflow-x: hidden;
       }
       .tech-panel {
-        background: linear-gradient(
-          135deg,
-          rgba(0, 250, 255, 0.1),
-          rgba(255, 0, 122, 0.05)
-        );
-        border: 1px solid rgba(0, 250, 255, 0.2);
-        border-radius: 12px;
-        padding: 2rem;
+        background: rgba(236, 236, 236, 0.1);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(42, 183, 202, 0.2);
+        border-radius: 10px;
+        padding: 1.5rem;
         text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease,
-          border-color 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         position: relative;
         overflow: hidden;
         z-index: 1;
         box-sizing: border-box;
         max-width: 100%;
       }
-      .tech-panel::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          circle at top left,
-          rgba(0, 250, 255, 0.2),
-          transparent 60%
-        );
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
       .tech-panel:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 10px 20px rgba(0, 250, 255, 0.4);
-        border-color: rgba(255, 0, 122, 0.4);
-      }
-      .tech-panel:hover::before {
-        opacity: 1;
+        transform: translateY(-4px) rotate(1deg);
+        box-shadow: 0 8px 25px rgba(42, 183, 202, 0.3);
       }
       .tech-panel h3 {
-        font-family: "Orbitron", sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #d6e0ff;
-        margin-bottom: 0.8rem;
+        font-family: "Poppins", sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #f8f9fa;
+        margin-bottom: 0.6rem;
       }
       .tech-panel p {
-        font-size: 0.95rem;
-        color: #d6e0ff;
-        line-height: 1.5;
+        font-size: 0.85rem;
+        color: #f8f9fa;
+        line-height: 1.6;
       }
-      .tech-panel::after {
-        content: "";
-        position: absolute;
-        bottom: -50%;
-        left: 50%;
-        width: 150%;
-        height: 150%;
-        background: linear-gradient(
-          45deg,
-          transparent,
-          rgba(255, 0, 122, 0.1),
-          transparent
-        );
-        transform: translateX(-50%) rotate(45deg);
-        transition: bottom 0.3s ease;
-        z-index: -1;
-      }
-      .tech-panel:hover::after {
-        bottom: -30%;
-      }
-      /* Fallback for backdrop-filter */
       .card,
       .startup-card,
       .tech-panel {
-        background-color: rgba(
-          30,
-          30,
-          74,
-          0.9
-        ); /* Fallback for browsers without backdrop-filter support */
+        background-color: rgba(58, 65, 66, 0.9);
       }
-      /* Responsive Adjustments */
       @media (max-width: 768px) {
         .hero-section {
-          padding: 4rem 1rem;
+          padding: 3.5rem 1rem;
         }
         .hero-content h1 {
-          font-size: 4rem;
+          font-size: 3.2rem;
         }
         .hero-content p {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
         }
         .tech-panels {
           grid-template-columns: 1fr;
@@ -448,7 +306,7 @@
           padding: 1.5rem;
         }
         .section-title {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
         main {
           padding: 1rem;
@@ -457,41 +315,38 @@
       }
       @media (max-width: 480px) {
         .hero-content h1 {
-          font-size: 3rem;
+          font-size: 2.2rem;
         }
         .hero-content p {
-          font-size: 1.2rem;
+          font-size: 1rem;
         }
         .section-title {
-          font-size: 2rem;
+          font-size: 1.6rem;
         }
       }
     </style>
   </head>
   <body>
-    <header class="hero-section py-36 text-center header-animation">
-      <div class="stars"></div>
+    <header class="hero-section py-28 text-center header-animation">
       <div class="hero-content">
         <h1
-          class="text-6xl md:text-8xl font-extrabold text-#d6e0ff drop-shadow-2xl"
-          style="font-family: 'Orbitron', sans-serif"
+          class="text-5xl md:text-6xl font-bold text-#F8F9FA"
+          style="font-family: 'Poppins', sans-serif"
         >
           Bhawesh Chaudhary
         </h1>
-        <p
-          class="text-xl md:text-3xl text-#d6e0ff mt-4 max-w-3xl mx-auto drop-shadow-lg"
-        >
+        <p class="text-lg md:text-xl text-#F8F9FA mt-4 max-w-3xl mx-auto">
           Java Developer | System Architect | Visionary Entrepreneur
         </p>
       </div>
     </header>
 
-    <main class="max-w-6xl mx-auto p-8 space-y-28" style="overflow-x: hidden">
+    <main class="max-w-5xl mx-auto p-6 space-y-20" style="overflow-x: hidden">
       <!-- Objective -->
       <section id="objective" class="section reveal">
         <h2 class="section-title">Objective</h2>
         <div class="card">
-          <p class="text-lg leading-relaxed text-#d6e0ff">
+          <p class="text-base leading-relaxed text-#F8F9FA">
             Driven Java developer with expertise in crafting scalable backend
             systems using Spring Boot and Apache Kafka. Passionate about solving
             complex challenges with elegant code, leading innovative ventures,
@@ -504,77 +359,77 @@
       <!-- Experience -->
       <section id="experience" class="section reveal">
         <h2 class="section-title">Experience</h2>
-        <div class="space-y-12">
+        <div class="space-y-8">
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-lg font-bold text-#F8F9FA">
               Software Engineer | A5 IT, Naples, Florida (Remote)
             </h3>
-            <p class="text-sm text-#a3bffa">Jan 2025 - Feb 2025</p>
-            <ul class="list-none mt-6 space-y-4">
+            <p class="text-sm text-#ECECEC">Jan 2025 - Feb 2025</p>
+            <ul class="list-none mt-4 space-y-3">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Led critical feature development, ensuring timely delivery
                 through close collaboration with team leads.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Mentored junior developers, fostering best practices and
                 alignment with project objectives.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Streamlined cross-functional workflows, resolving blockers to
                 deliver high-quality software.
               </li>
             </ul>
           </div>
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-lg font-bold text-#F8F9FA">
               Associate Software Engineer | A5 IT, Naples, Florida (Remote)
             </h3>
-            <p class="text-sm text-#a3bffa">Nov 2023 - Feb 2025</p>
-            <ul class="list-none mt-6 space-y-4">
+            <p class="text-sm text-#ECECEC">Nov 2023 - Feb 2025</p>
+            <ul class="list-none mt-4 space-y-3">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Automated stock synchronization for Amazon, eBay, and
                 WooCommerce, slashing manual workloads.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Built data validation pipelines, boosting listing accuracy and
                 minimizing errors.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Launched a multi-channel listing system, enhancing sales and
                 visibility across platforms.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Improved customer engagement with automated workflows, cutting
                 response times.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Integrated HubSpot CRM for seamless deal tracking and data
                 synchronization.
               </li>
             </ul>
           </div>
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-lg font-bold text-#F8F9FA">
               Associate Software Engineer (Intern) | A5 IT, Naples, Florida
               (Remote)
             </h3>
-            <p class="text-sm text-#a3bffa">Aug 2023 - Nov 2023</p>
-            <ul class="list-none mt-6 space-y-4">
+            <p class="text-sm text-#ECECEC">Aug 2023 - Nov 2023</p>
+            <ul class="list-none mt-4 space-y-3">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Supported backend automation for stock and CRM integration,
                 reducing errors significantly.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Contributed to RESTful API development, improving system
                 synchronization and efficiency.
               </li>
@@ -586,13 +441,13 @@
       <!-- Startups -->
       <section id="startups" class="section reveal">
         <h2 class="section-title">Startups</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="startup-card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-lg font-bold text-#F8F9FA">
               Hyper Media Productions
             </h3>
-            <p class="text-sm text-#a3bffa">Dec 2024 - Present</p>
-            <p class="mt-4 text-lg leading-relaxed text-#d6e0ff">
+            <p class="text-sm text-#ECECEC">Dec 2024 - Present</p>
+            <p class="mt-4 text-base leading-relaxed text-#F8F9FA">
               A dynamic media studio dedicated to transforming stories into
               unforgettable visuals. From cinematic commercials to vibrant music
               videos and films, we craft immersive content that resonates with
@@ -600,32 +455,32 @@
             </p>
             <ul class="list-none mt-4 space-y-3">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Developing a next-gen content platform for seamless media
                 management.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Harnessing AI to streamline video editing and audience
                 analytics.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Partnering with brands to create visually stunning marketing
                 campaigns.
               </li>
             </ul>
             <a
               href="https://hypermediaproductions.com"
-              class="mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-4 inline-block text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
               target="_blank"
               >Visit hypermediaproductions.com</a
             >
           </div>
           <div class="startup-card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">Hyper Xenc</h3>
-            <p class="text-sm text-#a3bffa">Jun 2024 - Present</p>
-            <p class="mt-4 text-lg leading-relaxed text-#d6e0ff">
+            <h3 class="text-lg font-bold text-#F8F9FA">Hyper Xenc</h3>
+            <p class="text-sm text-#ECECEC">Jun 2024 - Present</p>
+            <p class="mt-4 text-base leading-relaxed text-#F8F9FA">
               An innovative product development studio focused on building
               scalable, user-centric solutions. From intuitive design to rapid
               MVP development, we empower businesses to turn ideas into
@@ -633,24 +488,24 @@
             </p>
             <ul class="list-none mt-4 space-y-3">
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Creating scalable software architectures for high-growth
                 startups.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-#2AB7CA mr-2 text-lg">→</span>
                 Designing user-friendly interfaces to enhance customer
                 experiences.
               </li>
               <li class="flex items-start">
-                <span class="text-#00faff mr-3 text-xl">→</span>
+                <span class="text-# foamsicle mr-2 text-lg">→</span>
                 Delivering MVPs to accelerate market entry and validate business
                 ideas.
               </li>
             </ul>
             <a
               href="https://hyperxenc.com"
-              class="mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-4 inline-block planets-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
               target="_blank"
               >Visit hyperxenc.com</a
             >
@@ -669,7 +524,7 @@
           <div class="tech-panel">
             <h3>Frameworks & Tools</h3>
             <p>
-              Spring Boot, Apache Kafka, Node.js, Hibernate, Maven, Gradle, Git
+              Spring Boot, Apache Kafka, Node.js Hibernate, Maven, Gradle, Git
             </p>
           </div>
           <div class="tech-panel">
@@ -686,28 +541,24 @@
       <!-- Projects -->
       <section id="projects" class="section reveal">
         <h2 class="section-title">Projects</h2>
-        <div class="space-y-10">
+        <div class="space-y-8">
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-lg font-bold text-#F8F9FA">
               Astra:
-              <span
-                ><a
-                  href="https://bhaweshchaudhary.com.np/Astra"
-                  class="text-#00faff hover:text-#ff007a"
-                  >Documentation</a
-                ></span
+              <a
+                href="https://bhaweshchaudhary.com.np/Astra"
+                class="text-#2AB7CA hover:text-#FE6D73"
+                >Documentation</a
               >
               |
-              <span
-                ><a
-                  href="http://github.com/bhaweshchaudhary/Astra"
-                  class="text-#00faff hover:text-#ff007a"
-                  >GitHub</a
-                ></span
+              <a
+                href="http://github.com/bhaweshchaudhary/Astra"
+                class="text-#2AB7CA hover:text-#FE6D73"
+                >GitHub</a
               >
             </h3>
-            <p class="text-sm text-#a3bffa">May 2025 - Present</p>
-            <p class="mt-4 text-#d6e0ff">
+            <p class="text-sm text-#ECECEC">May 2025 - Present</p>
+            <p class="mt-4 text-#F8F9FA">
               Engineered a Python-based CLI tool for advanced network analysis,
               featuring extensible plugins and concurrent processing. Integrated
               Docker for seamless containerized deployment, optimizing
@@ -715,18 +566,16 @@
             </p>
           </div>
           <div class="card">
-            <h3 class="text-2xl font-bold text-#d6e0ff">
+            <h3 class="text-lg font-bold text-#F8F9FA">
               Team For Film:
-              <span
-                ><a
-                  href="http://teamforfilm.com"
-                  class="text-#00faff hover:text-#ff007a"
-                  >Visit Site</a
-                ></span
+              <a
+                href="http://teamforfilm.com"
+                class="text-#2AB7CA hover:text-#FE6D73"
+                >Visit Site</a
               >
             </h3>
-            <p class="text-sm text-#a3bffa">Feb 2025 - Apr 2025</p>
-            <p class="mt-4 text-#d6e0ff">
+            <p class="text-sm text-#ECECEC">Feb 2025 - Apr 2025</p>
+            <p class="mt-4 text-#F8F9FA">
               Developed a TypeScript and Node.js-powered web platform with
               Firebase integration, streamlining film collaboration and project
               management for Nepali director Navin Awal.
@@ -739,14 +588,14 @@
       <section id="publications" class="section reveal">
         <h2 class="section-title">Publications</h2>
         <div class="card">
-          <h3 class="text-2xl font-bold text-#d6e0ff">
+          <h3 class="text-lg font-bold text-#F8F9FA">
             ASAN, THE TRADITIONAL MARKET OF KATHMANDU VALLEY: ANALYZING MARKET
             TREND AND CONSUMER BUYING BEHAVIOR OF SUCH MARKET
           </h3>
-          <p class="text-sm text-#a3bffa">
+          <p class="text-sm text-#ECECEC">
             EDUMALSYS Journal of Research in Education Management · Nov 3, 2023
           </p>
-          <p class="mt-4 text-#d6e0ff">
+          <p class="mt-4 text-#F8F9FA">
             Asan is a hub for business in the Kathmandu valley famed for its
             bazaar, festive calendar, and historic location. This research looks
             at how the market is changing and how people shop in Asan, which is
@@ -754,7 +603,7 @@
           </p>
           <a
             href="https://ejournal.yasin-alsys.org/edumalsys/article/view/2048/1673"
-            class="mt-4 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+            class="mt-4 inline-block text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
             target="_blank"
             >Read Article</a
           >
@@ -765,10 +614,10 @@
       <section id="education" class="section reveal">
         <h2 class="section-title">Education</h2>
         <div class="card">
-          <h3 class="text-2xl font-bold text-#d6e0ff">
+          <h3 class="text-lg font-bold text-#F8F9FA">
             B.Tech in Computer Science and System Engineering
           </h3>
-          <p class="text-sm text-#a3bffa">
+          <p class="text-sm text-#ECECEC">
             Andhra University, Visakhapatnam | Jan 2021 - Apr 2024
           </p>
         </div>
@@ -779,99 +628,99 @@
         <h2 class="section-title">Certifications</h2>
         <div class="space-y-8">
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               Software Engineer | HackerRank
             </h3>
-            <p class="text-sm text-#a3bffa">
+            <p class="text-sm text-#ECECEC">
               Issued Nov 2024 · Credential ID: 28a61efe92ed
             </p>
             <a
               href="https://www.hackerrank.com/certificates/28a61efe92ed"
-              class="mt-2 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-2 inline-block text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
               target="_blank"
               >Verify Certificate</a
             >
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               Java Programming | Great Learning
             </h3>
-            <p class="text-sm text-#a3bffa">Issued Nov 2023</p>
+            <p class="text-sm text-#ECECEC">Issued Nov 2023</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               (ISC)² Candidate | ISC2
             </h3>
-            <p class="text-sm text-#a3bffa">
+            <p class="text-sm text-#ECECEC">
               Issued Aug 2023 · Expired Aug 2024
             </p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               Microsoft Certified: Azure AI Fundamentals | Microsoft
             </h3>
-            <p class="text-sm text-#a3bffa">Issued Oct 2022</p>
+            <p class="text-sm text-#ECECEC">Issued Oct 2022</p>
             <a
               href="https://www.credly.com/badges/c14e5dc2-87b7-4581-bee3-c376a2b6c6a6"
-              class="mt-2 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-2 inline-block text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
               target="_blank"
               >Verify Certificate</a
             >
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               MTA: Database Fundamentals | Microsoft
             </h3>
-            <p class="text-sm text-#a3bffa">Issued Jun 2022</p>
+            <p class="text-sm text-#ECECEC">Issued Jun 2022</p>
             <a
               href="https://www.credly.com/earner/earned/badge/03141ee3-57a6-4baf-8260-f859eac5644c"
-              class="mt-2 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-2 inline-block text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
               target="_blank"
               >Verify Certificate</a
             >
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               Python Fundamentals for Beginners | Great Learning
             </h3>
-            <p class="text-sm text-#a3bffa">Issued Jun 2022</p>
+            <p class="text-sm text-#ECECEC">Issued Jun 2022</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               Data Engineering for Everyone | DataCamp
             </h3>
-            <p class="text-sm text-#a3bffa">Issued Apr 2022</p>
+            <p class="text-sm text-#ECECEC">Issued Apr 2022</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               Python | W3Schools.com
             </h3>
-            <p class="text-sm text-#a3bffa">Issued Apr 2022</p>
+            <p class="text-sm text-#ECECEC">Issued Apr 2022</p>
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               Python Core | Sololearn
             </h3>
-            <p class="text-sm text-#a3bffa">
+            <p class="text-sm text-#ECECEC">
               Issued Jan 2022 · Credential ID: 15655364-1073
             </p>
             <a
               href="https://www.sololearn.com/Certificate/CT-APQA6R0M/png"
-              class="mt-2 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-2 inline-block text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
               target="_blank"
               >Verify Certificate</a
             >
           </div>
           <div class="card">
-            <h3 class="text-xl font-bold text-#d6e0ff">
+            <h3 class="text-base font-bold text-#F8F9FA">
               Algorithmic Toolbox | Coursera
             </h3>
-            <p class="text-sm text-#a3bffa">
+            <p class="text-sm text-#ECECEC">
               Issued Nov 2021 · Credential ID: 9TNG4ZZ2HMZZ
             </p>
             <a
               href="https://www.coursera.org/account/accomplishments/certificate/9TNG4ZZ2HMZZ"
-              class="mt-2 inline-block text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+              class="mt-2 inline-block text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
               target="_blank"
               >Verify Certificate</a
             >
@@ -883,7 +732,7 @@
       <section id="awards" class="section reveal">
         <h2 class="section-title">Awards</h2>
         <div class="card">
-          <p class="text-#d6e0ff">
+          <p class="text-#F8F9FA">
             Second Prize, Smart India Hackathon (Internal) | 2023
           </p>
         </div>
@@ -892,8 +741,29 @@
       <!-- Blog Section -->
       <section id="blog" class="section reveal">
         <h2 class="section-title">Technical Blog</h2>
-        <div id="blog-posts" class="space-y-10">
-          <p class="text-lg text-#a3bffa">Loading blog posts...</p>
+        <div id="blog-posts" class="space-y-8">
+          <p class="text-base text-#ECECEC">Loading blog posts...</p>
+        </div>
+      </section>
+
+      <!-- Donate -->
+      <section id="donate" class="section reveal">
+        <h2 class="section-title">Support My Work</h2>
+        <div class="card">
+          <p class="text-base leading-relaxed text-#F8F9FA mb-6">
+            Your support helps me continue creating innovative projects and
+            sharing knowledge through my technical blog and open-source
+            contributions. Every contribution, big or small, makes a difference
+            in driving my mission to architect impactful solutions.
+          </p>
+          <div class="flex justify-center">
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=FFTPYEKUUAW8G"
+              target="_blank"
+              class="inline-block bg-gradient-to-r from-#2AB7CA to-#FE6D73 text-#F8F9FA px-6 py-3 rounded-lg hover:from-#FE6D73 hover:to-#2AB7CA transition-all duration-300"
+              >Donate with PayPal</a
+            >
+          </div>
         </div>
       </section>
 
@@ -902,52 +772,47 @@
         <h2 class="section-title">Contact</h2>
         <div class="card grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <p class="text-lg mb-4 text-#d6e0ff">
+            <p class="text-base mb-4 text-#F8F9FA">
               Email:
               <a
                 href="mailto:sayhi@bhaweshchaudhary.com.np"
-                class="text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+                class="text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
+                >sayhi@bhaweshchaudhary.com.np</a
               >
-                sayhi@bhaweshchaudhary.com.np
-              </a>
             </p>
-            <p class="text-lg mb-4 text-#d6e0ff">
+            <p class="text-base mb-4 text-#F8F9FA">
               Portfolio:
               <a
                 href="https://bhaweshchaudhary.com.np"
-                class="text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+                class="text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
+                >bhaweshchaudhary.com.np</a
               >
-                bhaweshchaudhary.com.np
-              </a>
             </p>
           </div>
           <div>
-            <p class="text-lg mb-4 text-#d6e0ff">
+            <p class="text-base mb-4 text-#F8F9FA">
               X:
               <a
                 href="https://www.x.com/bhawesh_x/"
-                class="text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+                class="text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
+                >bhawesh_x</a
               >
-                bhawesh_x
-              </a>
             </p>
-            <p class="text-lg mb-4 text-#d6e0ff">
+            <p class="text-base mb-4 text-#F8F9FA">
               LinkedIn:
               <a
                 href="https://www.linkedin.com/in/bhaweshchaudhary/"
-                class="text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+                class="text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
+                >bhaweshchaudhary</a
               >
-                bhaweshchaudhary
-              </a>
             </p>
-            <p class="text-lg text-#d6e0ff">
+            <p class="text-base text-#F8F9FA">
               GitHub:
               <a
                 href="https://github.com/bhaweshchaudhary"
-                class="text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a"
+                class="text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73"
+                >bhaweshchaudhary</a
               >
-                bhaweshchaudhary
-              </a>
             </p>
           </div>
         </div>
@@ -957,7 +822,7 @@
     <div id="scrollToTop" class="scroll-to-top">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-7 w-7"
+        class="h-6 w-6"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -975,7 +840,7 @@
       // Scroll-to-top functionality
       const scrollToTop = document.getElementById("scrollToTop");
       window.addEventListener("scroll", () => {
-        scrollToTop.style.display = window.scrollY > 300 ? "block" : "none";
+        scrollToTop.style.display = window.scrollY > 300 ? "flex" : "none";
       });
       scrollToTop.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -998,12 +863,12 @@
 
           if (posts.length === 0) {
             blogPostsContainer.innerHTML =
-              '<p class="text-lg text-#a3bffa">No posts yet, come back later!</p>';
+              '<p class="text-base text-#ECECEC">No posts yet, come back later!</p>';
             return;
           }
 
           blogPostsContainer.innerHTML = "";
-          posts.forEach((post, index) => {
+          posts.forEach((post) => {
             const stripHtml = (html) => {
               const tempDiv = document.createElement("div");
               tempDiv.innerHTML = html;
@@ -1021,16 +886,16 @@
             const postElement = document.createElement("div");
             postElement.className = "card";
             postElement.innerHTML = `
-            <h3 class="text-2xl font-bold text-#d6e0ff">${postTitle}</h3>
-            <p class="text-sm text-#a3bffa">${postDate}</p>
-            <div class="blog-content mt-4">${displayContent}</div>
-            <a href="${post.url}" class="text-#00faff hover:text-#ff007a border-b-2 border-#00faff hover:border-#ff007a mt-4 inline-block focus:outline-none" target="_blank">Read More on DEV</a>
-          `;
+              <h3 class="text-lg font-bold text-#F8F9FA">${postTitle}</h3>
+              <p class="text-sm text-#ECECEC">${postDate}</p>
+              <div class="blog-content mt-4">${displayContent}</div>
+              <a href="${post.url}" class="text-#2AB7CA hover:text-#FE6D73 border-b-2 border-#2AB7CA hover:border-#FE6D73 mt-4 inline-block focus:outline-none" target="_blank">Read More on DEV</a>
+            `;
             blogPostsContainer.appendChild(postElement);
           });
         } catch (error) {
           console.error("Error fetching blog posts:", error.message);
-          blogPostsContainer.innerHTML = `<p class="text-lg text-#a3bffa">Unable to load blog posts: ${error.message}. Please check the console for details.</p>`;
+          blogPostsContainer.innerHTML = `<p class="text-base text-#ECECEC">Unable to load blog posts: ${error.message}. Please check the console for details.</p>`;
         }
       }
 
